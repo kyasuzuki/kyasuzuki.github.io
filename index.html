@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js" type="text/javascript"></script>
+    </head>
+    <style>
+        body {
+            margin: 0;
+            position: relative;
+        }
+
+        img {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .first {
+        }
+
+        .second {
+            clip-path: url(#clipping);
+        }
+    </style>
+    <body>
+        <img class="first" src="overlay.svg">
+        <img class="second" src="original.svg">
+
+        <svg id="mask">
+          <defs>
+            <clipPath id="clipping">
+              <circle cx="50" cy="50" r="100" />
+            </clipPath>
+          </defs>
+        </svg>
+
+    </body>
+    <script type="text/javascript">
+        $(document).mousemove(function(e) {
+            $('#clipping circle').attr('cx', e.pageX);
+            $('#clipping circle').attr('cy', e.pageY);
+        })
+    </script>
+</html>
