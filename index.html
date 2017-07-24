@@ -26,7 +26,9 @@
     </style>
     <body>
         <img class="first" src="overlay.svg">
+        <!-- <canvas id="canvas" width="300" height="300"> -->
         <img class="second" src="original.svg">
+      </canvas>
 
         <svg id="mask">
           <defs>
@@ -38,6 +40,18 @@
 
     </body>
     <script type="text/javascript">
+    // var canvas = document.getElementById('canvas'),
+    // ctx = canvas.getContext("2d"),
+    // painting = false,
+    // lastX = 0,
+    // lastY = 0;
+
+        $(document).mousedown(function(e) {
+
+        })
+        $(document).mouseup(function(e) {
+
+        })
         $(document).mousemove(function(e) {
             $('#clipping circle').attr('cx', e.pageX);
             $('#clipping circle').attr('cy', e.pageY);
